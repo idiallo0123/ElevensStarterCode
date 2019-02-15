@@ -11,8 +11,9 @@ public class CardTester
         Card card2 = new Card("2", "clover", 2);
         Card card3 = new Card("King", "spade", 10);
 
-
         System.out.println(card1.toString());
+        System.out.println(card2.toString());
+        System.out.println(card3.toString());
     }
 }
 
