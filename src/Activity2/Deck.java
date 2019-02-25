@@ -25,7 +25,6 @@ public class Deck {
      */
     private int size;
 
-
     /**
      * Creates a new <code>Deck</code> instance.<BR>
      * It pairs each element of ranks with each element of suits,
@@ -36,8 +35,14 @@ public class Deck {
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        for (int i=0; i<ranks.length; i++)
+        {
+            for (int j=0; j<suits.length; j++)
+            {
+                cards.add(new Card(ranks[i],suits[j],values[i]));
+            }
+        }
     }
-
 
     /**
      * Determines if this deck is empty (no undealt cards).
@@ -45,6 +50,14 @@ public class Deck {
      */
     public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        if(size == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -53,6 +66,12 @@ public class Deck {
      */
     public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        int count = 0;
+        for(int i= cards.size(); i>0; i--)
+        {
+            count++;
+        }
+        return count;
     }
 
     /**
