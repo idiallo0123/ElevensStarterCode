@@ -80,6 +80,8 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+
+        size = 52;
     }
 
     /**
@@ -89,6 +91,16 @@ public class Deck {
      */
     public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        int tempsize = size;
+        if(size != 0)
+        {
+            size--;
+            return cards.get(tempsize);
+        }
+        else
+        {
+            System.out.println("All cards have been dealt");
+        }
     }
 
     /**
