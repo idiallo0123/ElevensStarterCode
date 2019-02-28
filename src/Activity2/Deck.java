@@ -17,6 +17,7 @@ public class Deck {
      * cards contains all the cards in the deck.
      */
     private List<Card> cards;
+    private List<Card> shuffled;
 
     /**
      * size is the number of not-yet-dealt cards.
@@ -81,7 +82,27 @@ public class Deck {
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 
-        size = 52;
+        for(int i=0; i<=52; i++) //Clear shuffled deck
+        {
+            shuffled.set(i, null);
+        }
+        int j;
+        int jcheck[] = new int[51];
+        for(int k=0; k <= cards.size(); k++)
+        {
+            j = (int)(Math.random()*52);
+            jcheck[k] = j;
+            //This loop is to check that j will not be repeated
+            for(int i=0; i<= jcheck.length; j++)
+            {
+                if(j != jcheck[i])
+                {
+                    shuffled.set(k, cards.get(j));
+                }
+            }
+
+        }
+        cards = shuffled;
     }
 
     /**
